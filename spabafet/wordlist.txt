@@ -1,0 +1,12 @@
+about_page
+administration_page
+burser_secret_portal
+combined
+homepage
+password_reset
+payment_portal
+portal_log_in
+school_court_portal
+school_gallary
+school_helpdesk
+spabafet_school

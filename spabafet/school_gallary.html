@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - Spabafet School</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: black;
+      color: white;
+    }
+
+    header {
+      background: #111;
+      padding: 15px;
+      text-align: center;
+    }
+
+    h1 {
+      color: yellowgreen;
+      border-bottom-left-radius: 99%;
+      border-top-right-radius: 99%;
+      border: 5px solid green;
+      width: fit-content;
+      margin: auto;
+      padding: 10px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    h2 {
+      color: yellowgreen;
+      border-bottom: 2px solid green;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 3px solid green;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 0px 15px yellowgreen;
+    }
+
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Spabafet School Gallery</h1>
+  </header>
+
+  <div class="container">
+    <h2>Our School in Pictures</h2>
+    <div class="gallery">
+      <img src="images/classroom.jpg" alt="Classroom">
+      <img src="images/science_lab.jpg" alt="Science Lab">
+      <img src="images/computer_lab.jpg" alt="Computer Lab">
+      <img src="images/sports_field.jpg" alt="Sports Field">
+      <img src="images/library.jpg" alt="Library">
+      <img src="images/school_event.jpg" alt="School Event">
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Spabafet School. All rights reserved.
+  </footer>
+</body>
+</html>
+

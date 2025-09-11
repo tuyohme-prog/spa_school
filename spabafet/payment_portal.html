@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bursar Secret Portal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: black;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .portal {
+      background: #111;
+      padding: 30px;
+      border-radius: 12px;
+      width: 400px;
+      box-shadow: 0 0 15px green;
+    }
+
+    h2 {
+      color: yellowgreen;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 6px;
+    }
+
+    input[type="submit"] {
+      background: yellowgreen;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background: green;
+      color: white;
+    }
+
+    .success {
+      background: darkgreen;
+      color: white;
+      padding: 10px;
+      border-radius: 6px;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="portal">
+    <h2>Bursar Payment Portal</h2>
+    <form id="paymentForm">
+      <label for="employee">Select Employee</label>
+      <select id="employee" required>
+        <option value="">-- Choose Worker --</option>
+        <option value="teacher1">Teacher - John Doe</option>
+        <option value="teacher2">Teacher - Mary Jane</option>
+        <option value="staff1">Staff - Peter James</option>
+        <option value="staff2">Staff - Lucy Anne</option>
+      </select>
+
+      <label for="amount">Payment Amount (KES)</label>
+      <input type="number" id="amount" placeholder="Enter amount" required>
+
+      <label for="reason">Payment Reason</label>
+      <input type="text" id="reason" placeholder="Salary / Bonus / Deduction" required>
+
+      <input type="submit" value="Pay Worker">
+    </form>
+
+    <div id="message"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById('paymentForm');
+    const message = document.getElementById('message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const employee = document.getElementById('employee').value;
+      const amount = document.getElementById('amount').value;
+      const reason = document.getElementById('reason').value;
+
+      if (employee && amount && reason) {
+        message.innerHTML = `<div class="success">
+          ✅ Payment of KES ${amount} made to ${employee} for ${reason}.
+        </div>`;
+
+        form.reset();
+      }
+    });
+  </script>
+
+</body>
+</html>
+

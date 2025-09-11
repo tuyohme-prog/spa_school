@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spabafet School - Student Court Portal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      margin: 0;
+      padding: 0;
+      color: white;
+    }
+
+    header {
+      background: #111;
+      padding: 20px;
+      text-align: center;
+      font-size: 26px;
+      font-weight: bold;
+      color: yellowgreen;
+      border-bottom: 3px solid green;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+
+    h2 {
+      color: yellowgreen;
+      border-bottom: 2px solid green;
+      padding-bottom: 5px;
+      margin-top: 30px;
+    }
+
+    p, li {
+      line-height: 1.6;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.1);
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    form label {
+      display: block;
+      margin-top: 12px;
+      font-weight: bold;
+    }
+
+    form input, form select, form textarea, form button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: none;
+      font-size: 15px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    form button {
+      background: yellowgreen;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: 0.3s;
+    }
+
+    form button:hover {
+      background: green;
+      color: white;
+    }
+
+    .court-members ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .court-members li {
+      padding: 5px 0;
+    }
+
+    .resources ul {
+      list-style: square;
+      padding-left: 20px;
+    }
+
+    .resources a {
+      color: yellowgreen;
+      text-decoration: none;
+    }
+
+    .resources a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    ⚖️ Spabafet School - Student Court Portal
+  </header>
+
+  <div class="container">
+    
+    <!-- Announcements -->
+    <div class="section">
+      <h2>📢 Announcements</h2>
+      <div class="card">
+        <p><strong>Next Court Sitting:</strong> Friday, 20th September 2025, 2:00 PM at Main Hall, Room 3.</p>
+        <p><strong>Notice:</strong> All students must follow the dress code and be punctual.</p>
+      </div>
+    </div>
+
+    <!-- Court Calendar -->
+    <div class="section">
+      <h2>📅 Court Calendar</h2>
+      <div class="card">
+        <ul>
+          <li>20th Sept 2025 - Disciplinary Hearing (3 cases)</li>
+          <li>25th Sept 2025 - Appeal Session (2 cases)</li>
+          <li>30th Sept 2025 - Dispute Resolution</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Book a Session -->
+    <div class="section">
+      <h2>📝 Book a Court Session</h2>
+      <form>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Enter your full name" required>
+
+        <label for="student-id">Student ID</label>
+        <input type="text" id="student-id" placeholder="Enter your Student ID" required>
+
+        <label for="reason">Reason for Booking</label>
+        <select id="reason" required>
+          <option value="">-- Select Reason --</option>
+          <option value="disciplinary">Disciplinary Case</option>
+          <option value="appeal">Appeal</option>
+          <option value="dispute">Dispute Resolution</option>
+        </select>
+
+        <label for="preferred-date">Preferred Date</label>
+        <input type="date" id="preferred-date" required>
+
+        <button type="submit">Book Session</button>
+      </form>
+    </div>
+
+    <!-- Report a Case -->
+    <div class="section">
+      <h2>📢 Report a Case</h2>
+      <form>
+        <label for="reporter-name">Your Full Name (leave blank for anonymous)</label>
+        <input type="text" id="reporter-name" placeholder="Enter your name (optional)">
+
+        <label for="reporter-id">Student ID (optional)</label>
+        <input type="text" id="reporter-id" placeholder="Enter your Student ID">
+
+        <label for="case-type">Case Type</label>
+        <select id="case-type" required>
+          <option value="">-- Select Case Type --</option>
+          <option value="bullying">Bullying</option>
+          <option value="cheating">Cheating/Exam Malpractice</option>
+          <option value="harassment">Harassment</option>
+          <option value="theft">Theft</option>
+          <option value="disrespect">Disrespect to Staff</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label for="case-description">Case Description</label>
+        <textarea id="case-description" placeholder="Describe the issue..." required></textarea>
+
+        <button type="submit">Submit Report</button>
+      </form>
+    </div>
+
+    <!-- Court Members -->
+    <div class="section court-members">
+      <h2>👩‍⚖️ Court Members</h2>
+      <ul>
+        <li><strong>Chief Justice:</strong> Student Leader - Justice Mwangi</li>
+        <li><strong>Deputy Justice:</strong> Jane Okello</li>
+        <li><strong>Court Clerk:</strong> Samuel Odhiambo</li>
+        <li><strong>Student Representatives:</strong> From each faculty/department</li>
+      </ul>
+    </div>
+
+    <!-- Court Rules -->
+    <div class="section">
+      <h2>📖 Court Rules</h2>
+      <ul>
+        <li>All cases must be submitted at least 3 days before the hearing.</li>
+        <li>Respect and order must be maintained during sessions.</li>
+        <li>False accusations will lead to disciplinary measures.</li>
+        <li>All verdicts are binding unless appealed.</li>
+      </ul>
+    </div>
+
+    <!-- Resources -->
+    <div class="section resources">
+      <h2>📂 Resources & Downloads</h2>
+      <ul>
+        <li><a href="#">Student Court Constitution (PDF)</a></li>
+        <li><a href="#">Court Procedures Guide (PDF)</a></li>
+        <li><a href="#">Past Case Rulings (Archive)</a></li>
+      </ul>
+    </div>
+
+  </div>
+</body>
+</html>
+

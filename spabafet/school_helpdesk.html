@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICT Help Desk - Spabafet School</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #111;
+      padding: 15px;
+      text-align: center;
+      border-bottom: 3px solid yellowgreen;
+    }
+
+    header h1 {
+      color: yellowgreen;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 20px auto;
+      background: #1c1c1c;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.8);
+    }
+
+    h2 {
+      color: yellowgreen;
+      margin-bottom: 10px;
+      border-bottom: 2px solid green;
+      padding-bottom: 5px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      color: #ddd;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      background: #333;
+      color: white;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    input[type="file"] {
+      background: none;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      background: yellowgreen;
+      color: black;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: green;
+      color: white;
+    }
+
+    .contact-info {
+      margin-top: 30px;
+      padding: 15px;
+      background: #222;
+      border-radius: 8px;
+    }
+
+    .contact-info p {
+      margin: 8px 0;
+    }
+
+    .success-message {
+      display: none;
+      margin-top: 15px;
+      padding: 12px;
+      background: darkgreen;
+      color: white;
+      border-radius: 6px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Spabafet School ICT Help Desk</h1>
+  </header>
+
+  <div class="container">
+    <h2>Submit an ICT Issue</h2>
+    <form id="helpDeskForm">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="regNo">Registration Number:</label>
+      <input type="text" id="regNo" name="regNo" required>
+
+      <label for="email">School Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="category">Category of Issue:</label>
+      <select id="category" name="category" required>
+        <option value="">-- Select Issue Type --</option>
+        <option value="internet">Internet / WiFi</option>
+        <option value="portal">Portal Login</option>
+        <option value="hardware">Hardware (Computer/Devices)</option>
+        <option value="software">Software / Apps</option>
+        <option value="others">Others</option>
+      </select>
+
+      <label for="details">Detailed Report:</label>
+      <textarea id="details" name="details" required></textarea>
+
+      <label for="screenshot">Attach Screenshot (optional):</label>
+      <input type="file" id="screenshot" name="screenshot" accept="image/*">
+
+      <button type="submit">Submit Report</button>
+    </form>
+
+    <div class="success-message" id="successMessage">
+      ✅ Your ICT issue has been submitted successfully. The ICT Team will reach out to you shortly.
+    </div>
+
+    <div class="contact-info">
+      <h2>Help Desk Contact</h2>
+      <p>📧 Email: icthelp@spabafet.edu</p>
+      <p>📞 Phone: +254-700-123-456</p>
+      <p>⏰ Working Hours: Monday - Friday, 8 AM - 6 PM</p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("helpDeskForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      document.getElementById("successMessage").style.display = "block";
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
+
