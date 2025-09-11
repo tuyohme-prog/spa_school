@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spabafet School - Home</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: black;
+      color: white;
+    }
+
+    header {
+      background: #111;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 3px solid yellowgreen;
+    }
+
+    header h1 {
+      color: yellowgreen;
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin: 5px 0 0;
+      font-style: italic;
+      color: #ddd;
+    }
+
+    nav {
+      background: #222;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      padding: 12px 18px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      background: yellowgreen;
+      color: black;
+      border-radius: 5px;
+    }
+
+    .hero {
+      background: url("school-bg.jpg") no-repeat center center/cover;
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin: 0;
+      color: yellowgreen;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin-top: 10px;
+      font-size: 1.1rem;
+      color: #ddd;
+    }
+
+    .sections {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+
+    .card {
+      background: #111;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #333;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      border: 1px solid yellowgreen;
+      transform: scale(1.03);
+    }
+
+    .card h3 {
+      color: yellowgreen;
+    }
+
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+      border-top: 2px solid yellowgreen;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Spabafet School</h1>
+    <p>Knowledge • Discipline • Excellence</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="administration.html">Administration</a>
+    <a href="academics.html">Academics</a>
+    <a href="portals.html">Portals</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h2>Welcome to Spabafet School</h2>
+    <p>
+      Spabafet School nurtures future leaders through excellence in academics,
+      innovation in technology, and holistic student development.
+    </p>
+  </section>
+
+  <!-- Sections -->
+  <section class="sections">
+    <div class="card">
+      <h3>College</h3>
+      <p>Explore our 5 schools — Medicine, Environmental Studies, Technology, Applied Science, and Engineering.</p>
+      <a href="academics.html" style="color:yellowgreen; text-decoration:none; font-weight:bold;">Learn More →</a>
+    </div>
+
+    <div class="card">
+      <h3>High School</h3>
+      <p>Junior Secondary (JSS1–3) and Senior Secondary (SS1–3) programs preparing students for the future.</p>
+      <a href="academics.html" style="color:yellowgreen; text-decoration:none; font-weight:bold;">Discover →</a>
+    </div>
+
+    <div class="card">
+      <h3>Student Portals</h3>
+      <p>Access welfare, games, organizations, results, fee structure, and payment systems in one place.</p>
+      <a href="portals.html" style="color:yellowgreen; text-decoration:none; font-weight:bold;">Enter Portal →</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Spabafet School. All rights reserved.
+  </footer>
+
+</body>
+</html>
+

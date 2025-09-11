@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Spabafet — Student Services</title>
+  <style>
+    :root{
+      --bg:#0b0b0b; --card:#141414; --accent:yellowgreen; --muted:#cfcfcf;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:system-ui,Segoe UI,Roboto,Arial; background:linear-gradient(180deg,var(--bg),#07121a 120%);
+      color:var(--muted); min-height:100vh;
+      padding:18px;
+    }
+    header{display:flex;gap:16px;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto 18px}
+    h1{color:var(--accent); font-size:1.3rem; margin:0; border:4px solid green; padding:8px 12px; border-radius:12px}
+    nav{display:flex;gap:8px;flex-wrap:wrap}
+    nav a{color:white;text-decoration:none;padding:8px 10px;border-radius:8px;background:#111;display:inline-block;font-weight:600}
+    main{max-width:1100px;margin:0 auto}
+    .card{background:var(--card);border-radius:12px;padding:18px;margin-bottom:18px;box-shadow:0 6px 20px rgba(0,0,0,0.6)}
+    h2{color:var(--accent);margin-top:0}
+    label{display:block;margin-top:12px;font-weight:700;color:#ddd}
+    input,select,textarea,button{width:100%;padding:10px;border-radius:8px;border:none;background:#0f1112;color:var(--muted);margin-top:6px}
+    textarea{min-height:100px;resize:vertical}
+    .row{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .small{width:48%;display:inline-block}
+    .muted{color:#a8a8a8;font-size:0.95rem}
+    button.primary{background:var(--accent);color:black;font-weight:800;cursor:pointer}
+    .flex{display:flex;gap:12px;align-items:center}
+    .center{text-align:center}
+    table{width:100%;border-collapse:collapse;margin-top:10px;color:var(--muted)}
+    table th, table td{padding:10px;border-bottom:1px solid rgba(255,255,255,0.04);text-align:left}
+    .notice{background:#072214;padding:10px;border-radius:8px;margin-bottom:12px}
+    /* responsive */
+    @media (max-width:780px){
+      .row{grid-template-columns:1fr}
+      .small{width:100%}
+      nav{justify-content:center}
+      header{flex-direction:column;align-items:stretch;gap:12px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Spabafet School — Student Services</h1>
+    <nav aria-label="Student Services Navigation">
+      <a href="#welfare">Welfare</a>
+      <a href="#games">Games</a>
+      <a href="#orgs">Organizations & Leadership</a>
+      <a href="#results">Results / Download</a>
+      <a href="#fees">Fee Structure</a>
+      <a href="#pay">Fee Payment</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- WELFARE PORTAL -->
+    <section id="welfare" class="card" aria-labelledby="welfareTitle">
+      <h2 id="welfareTitle">1. Students Welfare Portal</h2>
+
+      <div class="notice">
+        <strong>What welfare provides:</strong> emergency support, counselling & mental health referrals, food assistance, housing help, pregnancy & family services, small hardship grants.
+      </div>
+
+      <form id="welfareForm" class="card" aria-label="Welfare request form">
+        <h3 class="center">Submit a Welfare Request</h3>
+
+        <label for="w_name">Full name</label>
+        <input id="w_name" name="fullName" required placeholder="Jane Doe">
+
+        <label for="w_id">Student ID</label>
+        <input id="w_id" name="studentId" required placeholder="e.g. S2025-0012">
+
+        <label for="w_email">Email or Contact</label>
+        <input id="w_email" name="email" type="email" required placeholder="you@school.edu">
+
+        <label for="w_type">Type of help needed</label>
+        <select id="w_type" name="type" required>
+          <option value="">-- Select --</option>
+          <option value="food">Food Assistance</option>
+          <option value="housing">Housing</option>
+          <option value="counselling">Counselling / Mental Health</option>
+          <option value="medical">Medical / Pregnancy</option>
+          <option value="financial">Financial Hardship</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label for="w_details">Describe your situation</label>
+        <textarea id="w_details" name="details" required placeholder="Please explain briefly. Include urgency and any supporting info."></textarea>
+
+        <label for="w_confidential">
+          <input type="checkbox" id="w_confidential" name="confidential"> Request confidentiality (do not share my name)
+        </label>
+
+        <button class="primary" type="submit">Submit Welfare Request</button>
+        <p class="muted">After submission you will receive a ticket number by email or SMS. The Welfare Officer will follow up within 48 hours during term time.</p>
+      </form>
+    </section>
+
+    <!-- GAMES PORTAL -->
+    <section id="games" class="card" aria-labelledby="gamesTitle">
+      <h2 id="gamesTitle">2. Games & Sports Portal</h2>
+
+      <div class="row">
+        <div class="card">
+          <h3>Upcoming Fixtures</h3>
+          <ul>
+            <li>Football: Spabafet vs Lakeside — Sat 27 Sept 2025, 3:00 PM (Main Field)</li>
+            <li>Basketball: Inter-Department Tournament — Thu 2 Oct 2025, 5:00 PM (Gym)</li>
+            <li>Athletics Trials — Mon 6 Oct 2025, 8:00 AM (Track)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Register for Teams / Trials</h3>
+          <form id="gamesForm" aria-label="Register for games">
+            <label for="g_name">Full name</label>
+            <input id="g_name" required>
+
+            <label for="g_id">Student ID</label>
+            <input id="g_id" required>
+
+            <label for="sport">Sport / Team</label>
+            <select id="sport" required>
+              <option value="">-- Choose --</option>
+              <option value="football">Football</option>
+              <option value="basketball">Basketball</option>
+              <option value="athletics">Athletics</option>
+              <option value="volleyball">Volleyball</option>
+              <option value="tabletennis">Table Tennis</option>
+            </select>
+
+            <label for="position">Preferred Position / Role (optional)</label>
+            <input id="position" placeholder="e.g. Forward, Goalkeeper, Captain">
+
+            <button class="primary" type="submit">Register</button>
+            <p class="muted">Team managers will contact selected players for trials via email or noticeboard.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORGS & LEADERSHIP -->
+    <section id="orgs" class="card" aria-labelledby="orgsTitle">
+      <h2 id="orgsTitle">3. Student Organizations & Leadership</h2>
+
+      <div class="card">
+        <h3>Student Organizations</h3>
+        <p class="muted">Clubs and societies promote leadership, skills and community life. Current recognized groups:</p>
+        <ul>
+          <li>Student Council</li>
+          <li>Drama & Media Club</li>
+          <li>Science Society</li>
+          <li>Entrepreneurship Club</li>
+          <li>Environmental Club</li>
+          <li>Religious Fellowship Groups</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Leadership & Elections</h3>
+        <p class="muted">Elections for Student Council occur every academic year. Roles include: President, VP, Secretary, Treasurer, Faculty Reps.</p>
+        <form id="nominateForm" aria-label="Nomination form">
+          <label for="nom_name">Nominator's name</label>
+          <input id="nom_name" required>
+
+          <label for="nom_id">Nominator Student ID</label>
+          <input id="nom_id" required>
+
+          <label for="candidate_name">Candidate full name</label>
+          <input id="candidate_name" required>
+
+          <label for="candidate_id">Candidate Student ID</label>
+          <input id="candidate_id" required>
+
+          <label for="positionApply">Position being nominated for</label>
+          <select id="positionApply" required>
+            <option value="">-- Choose Position --</option>
+            <option>President</option>
+            <option>Vice President</option>
+            <option>Secretary</option>
+            <option>Treasurer</option>
+            <option>Faculty Representative</option>
+          </select>
+
+          <label for="manifesto">Candidate manifesto (short)</label>
+          <textarea id="manifesto" placeholder="Candidate's 150-200 word manifesto" required></textarea>
+
+          <button class="primary" type="submit">Submit Nomination</button>
+          <p class="muted">Nominations close two weeks before elections. The election committee will verify eligibility.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- RESULTS DOWNLOAD -->
+    <section id="results" class="card" aria-labelledby="resultsTitle">
+      <h2 id="resultsTitle">4. Results & Transcripts (Download)</h2>
+
+      <p class="muted">Enter your Student ID and term to download your result slip or transcripts. This demo will simulate the download; replace the logic with a secure server endpoint to serve real documents.</p>
+
+      <form id="resultsForm">
+        <label for="r_id">Student ID</label>
+        <input id="r_id" required>
+
+        <label for="r_term">Term / Session</label>
+        <select id="r_term" required>
+          <option value="">-- Choose term --</option>
+          <option value="term1_2025">Term 1 2025</option>
+          <option value="term2_2025">Term 2 2025</option>
+          <option value="transcript_2025">Full Transcript 2020-2025</option>
+        </select>
+
+        <button class="primary" type="submit">Download</button>
+        <p class="muted">Downloads are issued as password-protected PDF (password = your Student ID) in a real setup.</p>
+      </form>
+
+      <div id="downloadArea" style="margin-top:12px;"></div>
+    </section>
+
+    <!-- FEE STRUCTURE -->
+    <section id="fees" class="card" aria-labelledby="feesTitle">
+      <h2 id="feesTitle">5. Fee Structure</h2>
+
+      <p class="muted">Below is an example fee structure. Replace values with your real fees per programme / year.</p>
+
+      <table aria-label="example fee table">
+        <thead>
+          <tr><th>Item</th><th>Details</th><th>Amount (KES)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Tuition (per semester)</td><td>College — Standard rate</td><td>75,000</td></tr>
+          <tr><td>Tuition (per semester)</td><td>High School — Standard rate</td><td>35,000</td></tr>
+          <tr><td>Registration</td><td>One-time / per year</td><td>3,000</td></tr>
+          <tr><td>Library & ICT</td><td>Per semester</td><td>2,500</td></tr>
+          <tr><td>Student ID card</td><td>One-time</td><td>800</td></tr>
+          <tr><td>Accommodation (per semester)</td><td>Hostel — shared</td><td>20,000</td></tr>
+        </tbody>
+      </table>
+
+      <p class="muted">For customised invoices (scholarships, part-payments) contact <strong>Finance Office</strong>.</p>
+    </section>
+
+    <!-- FEE PAYMENT METHODS -->
+    <section id="pay" class="card" aria-labelledby="payTitle">
+      <h2 id="payTitle">6. Fee Payment Methods</h2>
+
+      <div class="card">
+        <h3>Available Payment Options</h3>
+        <ol>
+          <li><strong>Bank Transfer / Paybill</strong> — Use the school's bank account or paybill. Always include Student ID as reference.</li>
+          <li><strong>Mobile Money / M-PESA</strong> — Paybill: <em>[Replace with your Paybill]</em>, Account: <em>Student ID</em>.</li>
+          <li><strong>On-campus Cashier</strong> — Pay at Finance Office and collect receipt. Bring ID.</li>
+          <li><strong>Online Card Payment</strong> — Secure card gateway (set up with a payment processor).</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <h3>Quick Payment (simulate)</h3>
+        <form id="paymentForm" aria-label="payment form">
+          <label for="p_id">Student ID</label>
+          <input id="p_id" required placeholder="S2025-0012">
+
+          <label for="p_amount">Amount (KES)</label>
+          <input id="p_amount" type="number" required placeholder="e.g. 35000">
+
+          <label for="p_method">Payment Method</label>
+          <select id="p_method" required>
+            <option value="">-- Choose --</option>
+            <option value="mpesa">M-PESA (Paybill)</option>
+            <option value="bank">Bank Transfer</option>
+            <option value="cash">On-campus Cash</option>
+            <option value="card">Card Payment</option>
+          </select>
+
+          <label for="p_ref">Payment Reference (transaction ID)</label>
+          <input id="p_ref" placeholder="e.g. MPESA ABC12345" required>
+
+          <button class="primary" type="submit">Submit Payment</button>
+        </form>
+
+        <div id="paymentResult" style="margin-top:12px"></div>
+
+        <p class="muted">Note: This demo does not process real payments. Hook the form to your payment gateway or finance backend to record payments and issue receipts.</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Basic client-side mocks for demo purposes
+    // 1) Welfare form
+    document.getElementById('welfareForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const id = Math.random().toString(36).slice(2,9).toUpperCase();
+      alert('Welfare request submitted. Ticket ID: WEL-'+id + '\\nA welfare officer will contact you.');
+      this.reset();
+    });
+
+    // 2) Games registration
+    document.getElementById('gamesForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const id = Math.random().toString(36).slice(2,8).toUpperCase();
+      alert('Registration received. Trial Ticket: GAM-'+id);
+      this.reset();
+    });
+
+    // 3) Nominations
+    document.getElementById('nominateForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Nomination submitted. The election committee will verify eligibility.');
+      this.reset();
+    });
+
+    // 4) Results download (simulate)
+    document.getElementById('resultsForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const sid = document.getElementById('r_id').value.trim();
+      const term = document.getElementById('r_term').value;
+      if(!sid || !term){ alert('Enter Student ID and term'); return; }
+      // Simulate available file
+      const downloadArea = document.getElementById('downloadArea');
+      downloadArea.innerHTML = '<div class="card"><p>Result ready for <strong>'+sid+'</strong> — <a href="#" id="dlLink">Download ' + (term.includes('transcript') ? 'Transcript' : 'Result slip') + '</a></p></div>';
+      document.getElementById('dlLink').addEventListener('click', function(evt){
+        evt.preventDefault();
+        // For demo, create a small text file and download - in production fetch from server
+        const content = 'Spabafet\\nResult for '+sid+' ('+term+')\\nSubject A: 75\\nSubject B: 68\\n---';
+        const blob = new Blob([content], {type:'text/plain'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = sid + '_' + term + '.txt';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+      });
+      this.reset();
+    });
+
+    // 5) Payment simulation - validate and show receipt stub
+    document.getElementById('paymentForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const sid = document.getElementById('p_id').value.trim();
+      const amount = document.getElementById('p_amount').value.trim();
+      const method = document.getElementById('p_method').value;
+      const ref = document.getElementById('p_ref').value.trim();
+      if(!sid||!amount||!method||!ref){ alert('Please complete the payment form'); return; }
+      const receiptId = 'PAY-' + Math.random().toString(36).slice(2,9).toUpperCase();
+      const el = document.getElementById('paymentResult');
+      el.innerHTML = '<div class="card"><strong>Payment recorded (demo)</strong><p>Receipt: '+receiptId+'</p><p>Student: '+sid+'</p><p>Amount: KES '+amount+'</p><p>Method: '+method+'</p><p>Reference: '+ref+'</p><p class="muted">Finance office will verify and issue an official receipt within 24 hours.</p></div>';
+      this.reset();
+    });
+
+    // simple hash navigation focus
+    function scrollToHash(){
+      const id = location.hash ? location.hash.slice(1) : 'welfare';
+      const el = document.getElementById(id);
+      if(el){ el.scrollIntoView({behavior:'smooth', block:'start'}); }
+    }
+    window.addEventListener('hashchange', scrollToHash);
+    window.addEventListener('load', scrollToHash);
+  </script>
+</body>
+</html>
+
